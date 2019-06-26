@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mt-lg-5">
+      <h4>Nginx Configuration Generation</h4>
+      <span class="short-line"></span>
+      <form class="form row" (submit)="createNginx()" name="form">
+        <div class="form-group col-md-12">
+          <label>Upstream Name</label>
+          <input class="form-control form-control-alternative" type="text" [(ngModel)]="nginxConf.upstream" name="upstream">
+        </div>
+        <div class="form-group col-md-6">
+          <label>Blue IP Address</label>
+          <input class="form-control form-control-alternative" type="text" [(ngModel)]="nginxConf.blue_ip" name="blue_ip">
+        </div>
+        <div class="form-group col-md-4">
+          <label>Port</label>
+          <input class="form-control form-control-alternative" type="number" [(ngModel)]="nginxConf.blue_port" name="blue_port">
+        </div>
+        <div class="form-group col-md-6">
+          <label>Green IP Address</label>
+          <input class="form-control form-control-alternative" type="text" [(ngModel)]="nginxConf.green_ip" name="green_ip">
+        </div>
+        <div class="form-group col-md-4">
+          <label>Port</label>
+          <input class="form-control form-control-alternative" type="number" [(ngModel)]="nginxConf.green_port" name="greep_port">
+        </div>
+        <hr>
+        <div class="form-group col-md-12">
+          <label>Server Name</label>
+          <input class="form-control form-control-alternative" type="text" [(ngModel)]="nginxConf.server_name" name="server_name">
+        </div>
+        <div class="form-group form-check col-md-12">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="toggleCheck()" [(ngModel)]="nginxConf.addSSl" name="addSll">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="form-group col-md-12" *ngIf="nginxConf.addSSl">
+          <textarea class="form-control" name="sslCertificate" [(ngModel)]="nginxConf.sslCertificate" placeholder="Put your ssl key here"></textarea>
+          <textarea class="form-control" name="sslKey" [(ngModel)]="nginxConf.sslKey" placeholder="Put your ssl key "></textarea>
+        </div>
+        <div class="form-group col-md-12">
+          <input type="submit" value="Generate" class="btn btn-primary col-12">
+        </div>
+      </form>
+    </div>
+    <div class="col-6 border-left mt-lg-5" *ngIf="nginxConfiguration">
+      <h6>Generated Configurations</h6>
+      <div class="">
+        <pre style="whitespace:pre;">{{nginxConfiguration.output}}</pre>
+      </div>
+      <div class="">
+        <pre style="whitespce:pre">{{nginxConfiguration.dockerOutput}}</pre>
+      </div>
+    </div>
+  </div>
+</div>

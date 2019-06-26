@@ -1,0 +1,49 @@
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 p-5">
+        <p>Directories Structure <span class="pointer pull-right text-primary" (click)="openDirectory('~','folder')"><b>Home</b></span>
+          <br><span class="pointer text-darker"><span class="" (click)="openDirectory('..','folder',pwds[pwds.length-1])"><i class="fa fa-arrow-left"></i> Back</span> |
+        <span class="pointer" (click)="openNextDirectory(nextDir[nextDir.length-1],'folder')"><i class="fa fa-arrow-right"></i> Previous</span></span>
+        </p>
+        <ul class="list-unstyled list-inline">
+          <li class="link-list" *ngFor="let dir of directories">
+            <span class="link" (click)="openDirectory(dir,'folder')"> <i class="fa fa-folder"></i> {{dir}}</span><span class="pull-right" (click)="copyDir(fullPwd+'/'+dir)"><i class="fa fa-copy"></i> </span>
+          </li>
+        </ul>
+        <ul class="list-unstyled list-inline">
+          <hr>
+          <li class="" *ngFor="let file of files">
+            <span class="link" (click)="openFile(file)"> <i class="fa fa-file-text-o"></i> {{file}} </span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col-md-12">
+            <ol class="breadcrumb m-0 p-0">
+              <li class="breadcrumb-item" *ngFor="let pwd of pwds"><button class="btn btn-link" (click)="openBread($index,pwd)">{{pwd}}</button></li>
+            </ol>
+            <ul class="list-unstyled list-inline-item">
+              <li class="pt-2"><span class="pointer" (click)="pasteDir(fullPwd,'copy')"><i class="fa fa-paste"></i> Paste</span></li>
+              <li class="pt-2"><span class="pointer" (click)="pasteDir(fullPwd,'move')"><i class="fa fa-download"></i> Move</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-12 text-primary mt-2">
+            <div class="card">
+              <div class="card-header">
+                <span class="link"><i class="fa fa-file-text"></i> {{currentFile}}</span>
+                <button class="btn btn-sm" (click)="updateFile()">Save</button>
+              </div>
+              <div class="card-body">
+              <textarea class="form-control" rows="20" style="color: #0a0c0d;">
+                {{fileText}}
+              </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
