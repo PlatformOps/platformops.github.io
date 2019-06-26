@@ -1,8 +1,0 @@
-version: "2"
-services:
-  phlox-planet-api:
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - "3000:3000"
