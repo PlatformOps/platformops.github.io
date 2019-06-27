@@ -20,16 +20,7 @@ authors:
     email: jinna.balu@outllok.com
     web: https://jinnabalu.github.io
     twitter: https://twitter.com/JinnaBalu
-    description: "Author of Platform Ops, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Platform Ops demo, a Jekyll template compatible with Github pages."
+    description: "Creator of Platform Ops, Platform Engineer @ Wisestep Inc, Cloud Stack, Containerization, CICD, Application architecture, Vulnerability Assessment and Penetration Testing"
 
 # Plugins
 plugins:
