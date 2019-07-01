@@ -2,6 +2,7 @@
 layout: post
 title:  "CICD Jenkins - Send email with default content"
 author: jinna
+topic: CICD
 categories: [ CICD, Jenkins ]
 tags: [red, yellow]
 image: assets/images/tech/jenkins.svg
@@ -10,9 +11,6 @@ featured: true
 hidden: true
 rating: 4.5
 ---
-
-
-# Send email with default content as the build output
 
 #### Prerequisite Plugins
 -[Email-ext plugin](https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin)

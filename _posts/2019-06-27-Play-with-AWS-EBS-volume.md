@@ -3,18 +3,17 @@ layout: post
 title:  "AWS EBS Volmes - Create and attach the EBS volume with mounting"
 author: jinna
 categories: [ aws, ebs ]
-image: assets/images/Logo_new_4_b.png
 ---
 
 ## Create Volume from console
 - Login to AWS console
 - Goto menu Services -> Compute -> EC2 ->  In Left Sidebar under Elastic Block Store -> click on Volume -> Create Volume
 - Fill the following parameter
-![Create AWS EBS Volume](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/images/create-aws-ebs-volume.png)
+![Create AWS EBS Volume]({{site.baseurl}}/assets/images/tech/create-aws-ebs-volume.png)
 
 ## Attach a volume
 - Select the created volume, right click and select the “attach volume” option.
-![Atach EBS Volume](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/images/ebs-volume-atach.jpg)
+![Atach EBS Volume]({{site.baseurl}}/assets/images/tech/ebs-volume-atach.jpg)
 
 > Note: Volume and EC2 instance need to be in the same availability zone.
 
