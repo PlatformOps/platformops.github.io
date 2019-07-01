@@ -3,7 +3,12 @@ layout: post
 title:  "Docker - dockerise the nodejs application"
 author: jinna
 categories: [ docker, nodejs ]
-image: assets/images/Logo_new_4_b.png
+tags: [red, yellow]
+image: assets/images/tech/docker_nodejs.jpeg
+description: " Create a nodejs application, Dockerise nodejs application"
+featured: true
+hidden: true
+rating: 4.5
 ---
 
 Main goal of this story is to dockerise the nodejs application. Assuming that you have come here after installing nodejs and docker.

@@ -3,7 +3,7 @@ layout: post
 title:  "Clean tumbstones in cassandra"
 author: jinna
 categories: [ cassandra, database, nosql ]
-image: assets/images/Logo_new_4_b.png
+image: assets/images/tech/cassandra.svg
 ---
 
 # Clean tumbstones in cassandra

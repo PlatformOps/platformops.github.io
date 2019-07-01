@@ -3,7 +3,7 @@ layout: post
 title:  "Jenkins - Upgrade Jenkins"
 author: jinna
 categories: [ CICD, Jenkins ]
-image: assets/images/Logo_new_4_b.png
+image: assets/images/tech/jenkins.svg
 ---
 # Running Jekyll in Docker
 
