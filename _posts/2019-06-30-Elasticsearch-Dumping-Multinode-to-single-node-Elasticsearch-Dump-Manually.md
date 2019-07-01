@@ -4,7 +4,8 @@ title:  "Elasticsearch - Dumping documents from multinode to single node"
 author: jinna
 categories: [ elasticsearch, searchengine ]
 tags: [red, yellow]
-image: assets/images/Logo_new_4_b.png
+image: assets/images/tech/elasticsearch.svg
+show-image: false
 description: "Elasticsearch is running as three node cluster, task is to copy and restore the multinode to single node cluster"
 featured: true
 hidden: true
