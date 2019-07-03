@@ -5,7 +5,10 @@ author: jinna
 categories: [ elasticsearch, searchengine ]
 tags: [red, yellow]
 image: assets/images/tech/elasticsearch.svg
+<<<<<<< HEAD:_posts/2019-06-30-Elasticsearch-Dumping-Multinode-to-single-node-Elasticsearch-Dump-Manually.md
 show_image: false
+=======
+>>>>>>> parent of ab7e183... Layout changes and content changes too:_posts/2019-06-27-Multinode-to-single-node-Elasticsearch-Dump-Manually.md
 description: "Elasticsearch is running as three node cluster, task is to copy and restore the multinode to single node cluster"
 featured: true
 hidden: true

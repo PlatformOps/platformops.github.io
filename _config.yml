@@ -15,13 +15,12 @@ permalink: /:title/
 authors:
   jinna:
     name: Jinna Balu
-    display_name: Jinna Balu
+    display_name: Balu
     gravatar: 24b94c438636e3d95a32f72999d5081f
     email: jinna.balu@outllok.com
     web: https://jinnabalu.github.io
     twitter: https://twitter.com/JinnaBalu
-    twitter_username: JinnaBalu
-    description: "Platform Engineer @ Wisestep Inc"
+    description: "Creator of Platform Ops, Platform Engineer @ Wisestep Inc, Cloud Stack, Containerization, CICD, Application architecture, Vulnerability Assessment and Penetration Testing"
 
 # Plugins
 plugins:
