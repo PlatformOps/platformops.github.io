@@ -4,6 +4,7 @@ disqus: false
 archive: false
 post_class: post-template
 ---
+
 <div class="container">
     <div class="row">
         {% assign author = site.authors[page.author] %}
@@ -48,7 +49,6 @@ post_class: post-template
                 </div>
                 {% endif %}
             </div>
-            <!-- Post Categories -->
             <div class="after-post-cats">
                 <ul class="tags mb-4">
                     {% assign sortedCategories = page.categories | sort %}
@@ -60,9 +60,6 @@ post_class: post-template
                     {% endfor %}
                 </ul>
             </div>
-            <!-- End Categories -->
-
-            <!-- Post Tags -->
             <div class="after-post-tags">
                 <ul class="tags">
                     {% assign sortedTags = page.tags | sort %}
@@ -73,11 +70,7 @@ post_class: post-template
                     {% endfor %}
                 </ul>
             </div>
-            <!-- End Tags -->
-
-            <!-- Post Featured Image -->
             {% if page.image %}
-
             {% if site.lazyimages == "enabled" %}
             <img class="featured-image img-fluid lazyimg"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII="
@@ -90,11 +83,7 @@ post_class: post-template
             {% endif %}
 
             {% endif %}
-            <!-- End Featured Image -->
-
-            <!-- Post Content -->
             <div class="article-post">
-                <!-- Toc if any -->
                 {% if page.toc %}
                 {% if page.beforetoc %}
                 <p><em>{{page.beforetoc}}</em></p>
@@ -104,12 +93,8 @@ post_class: post-template
                     {% include toc.html html=content %}
                 </div>
                 {% endif %}
-                <!-- End Toc -->
                 {{content}}
             </div>
-
-            <!-- Post Date -->
-
 
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
@@ -126,15 +111,9 @@ post_class: post-template
             <!-- End Categories -->
 
         </div>
-        <!-- End Post -->
-
     </div>
 </div>
-<!-- End Article
-================================================== -->
 
-<!-- Begin Comments
-================================================== -->
 {% if page.comments != false %}
 <div class="container">
     <div id="comments" class="row justify-content-center mb-5">
@@ -144,8 +123,6 @@ post_class: post-template
     </div>
 </div>
 {% endif %}
-<!--End Comments
-================================================== -->
 
 <!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
 https://search.google.com/structured-data/testing-tool/u/0/
