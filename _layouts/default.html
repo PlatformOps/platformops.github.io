@@ -1,76 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    {% include head.html %}
-    {% seo %}
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
-
-    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
-
-    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-    <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
-    {% if site.adsense == "enabled" %}
-    {% include adsense-under-header.html %}
-    {% endif %}
-    <!-- End Adsense -->
-    {% include crisp.html %}
-</head>
-
-{% if jekyll.environment == 'production' %}
-<!-- change your GA id in _config.yml -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '{{site.google_analytics}}', 'auto');
-    ga('send', 'pageview');
-</script>
-{% endif %}
-
-{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
-
+{% include head.html %}
 <body class="{{layout}}">
-    <!-- defer loading of font and font awesome -->
     <noscript id="deferred-styles">
         <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i"
             rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
             integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     </noscript>
-
-
-    <!-- Begin Menu Navigation
-================================================== -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mediumnavigation nav-down">
-
         <div class="container pr-0">
-
-            <!-- Begin Logo -->
             <a class="navbar-brand" href="{{ site.baseurl }}/">
                 <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}"> <span
                     class="h2 text-success section-title"><b>platform ops</b></span>
             </a>
-            <!-- End Logo -->
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarMediumish">
-
-                <!-- Begin Menu -->
-
                 <ul class="navbar-nav ml-auto">
-
                     {% if page.url == "/" %}
                     <li class="nav-item active">
                         {% else %}
@@ -78,32 +25,22 @@
                         {% endif %}
                         <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
                     </li>
                     {% include search-lunr.html %}
-
                 </ul>
-
-                <!-- End Menu -->
-
             </div>
-
         </div>
     </nav>
-    <!-- End Navigation
-================================================== -->
     {% if page.layout == 'post' %}
     {% include social-share-aside-bar.html %}
     {% endif %}
     <div class="site-content">
-
         <div class="container">
             <div class="main-content">
                 {{ content }}
             </div>
-
             {% if site.mailchimp-list %}
             <!-- Bottom Alert Bar
 ================================================== -->
