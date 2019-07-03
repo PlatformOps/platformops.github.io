@@ -74,7 +74,7 @@ post_class: post-template
             </div>
             <!-- End Tags -->
 
-            {% if page.show_image %}
+            {% if page.show_image == true %}
             <!-- Post Featured Image -->
             {% if page.image %}
 
@@ -90,8 +90,9 @@ post_class: post-template
             {% endif %}
 
             {% endif %}
-            <!-- End Featured Image -->
+
             {% endif %}
+            <!-- End Featured Image -->
             <!-- Post Content -->
             <div class="article-post">
                 <!-- Toc if any -->
