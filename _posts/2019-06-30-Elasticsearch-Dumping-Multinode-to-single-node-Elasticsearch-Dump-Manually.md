@@ -5,7 +5,7 @@ author: jinna
 categories: [ elasticsearch, searchengine ]
 tags: [red, yellow]
 image: assets/images/tech/elasticsearch.svg
-show-image: false
+show_image: false
 description: "Elasticsearch is running as three node cluster, task is to copy and restore the multinode to single node cluster"
 featured: true
 hidden: true
