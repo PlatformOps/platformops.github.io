@@ -77,7 +77,18 @@
 
     {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
     <!-- Crisp LIve chat -->
-    <script
-        type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "f2e8c87f-f50f-4ebb-90fe-b45fa60e1724"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "f2e8c87f-f50f-4ebb-90fe-b45fa60e1724";
+        (
+            function () {
+                d = document;
+                s = d.createElement("script");
+                s.src = "https://client.crisp.chat/l.js";
+                s.async = 1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+            }
+        )();
+    </script>
     <!-- End Crisp LIve chat -->
 </head>
