@@ -42,7 +42,8 @@ post_class: post-template
                                     itemprop="dateModified">
                                     {{ page.last_modified_at | date: "%b %-d, %Y" }}
                                 </time>)
-                                {% endif %}
+                                {% endif %} 
+                                - <span class="text-muted">{% include read-time.html %}</span>
                             </small>
                         </p>
                     </div>
