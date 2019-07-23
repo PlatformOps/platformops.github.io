@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "Platform Ops | Steps to install a Go Daddy SSL Certificate with NGINX"
+title:  "Steps to install a Go Daddy SSL Certificate with NGINX"
 author: jinna
 categories: [ NGINX, Reverse Proxy ]
 ---
 
-## Let's go! Request SSL certificate
-
-### Generate a CSR and Private Key
+### Step1: Generate a CSR and Private Key
 
 Before purchasing the certificate we have to generate the CSR(Certificate Signing Request) and key files. You can generate `CSR` and `.key` with `openssl`. Here is the example commad with sample domain. 
 
@@ -26,6 +24,7 @@ openssl req -newkey rsa:2048 -nodes -keyout platform-ops.key -out platform-ops.c
 ```
 
 > `platform-ops.key` - KEY_FILE_NAME
+
 > `platform-ops.csr` - CSR_FILE_NAME
 
 - Here is the terminal sample output
@@ -65,7 +64,7 @@ Now you can purchase your certificate. You will need to copy and paste your `pla
 ```bash
 cat platform-ops.csr
 ```
-### Get an SSL certificate
+### Steps 2: Get an SSL certificate
 
 Buy SSL and show visitors you’re trustworthy and authentic. Godaddy provides the ssl certificate with the following types.
 
@@ -75,7 +74,7 @@ Buy SSL and show visitors you’re trustworthy and authentic. Godaddy provides t
 
 Go for something that best suits your needs purchase the certificate. This tutorial is based on the first one but I’m sure you can use it for all of them. Clear steps defined for purchasing and activating the ssl in [SSL Certificates Help](https://in.godaddy.com/help/ssl-certificates-1000006) godaddy official docs.
 
-### Request an SSL certificate and download 
+### Step 3: Request an SSL certificate and download 
 
 GoDaddy now verifies that you control the domain. You will receive an email as soon as your SSL certificate will be issued with a link to download it. Open that link.
 
@@ -86,17 +85,17 @@ The GoDaddy intermediate certificate bundle (Ex. `gd_bundle-g2-g1.crt`)
 
 The certificate is now ready to be installed on your `NGINX`
 
-### Generate single chained certificate
+#### Generate single chained certificate
 
 With Nginx, if your Certificate Authority (CA) included an intermediate certificate, you must create a single chained certificate file that contains your certificate and the CA’s intermediate certificates.
 
-#### Certificates
+##### Certificates
 
 Ones you have generated, downloaded and extracted the certificate zip, you will find 2 files in it:
   - `gd_bundle-g2-g1.crt` Intermediate Certificate
   - `RANDOM_NUM.crt` Your SSL Certificate
 
-#### Creating single chained certificate
+##### Creating single chained certificate
 
 Create a single "chained" certificate file that contains your certificate and the CA's intermediate certificates.
 
@@ -108,7 +107,7 @@ cat <RANDAM_NAME_SSL CERTIFICAT>.crt <GD_BUNDLE_OR_SSL_CERTIFICATE>.crt > <NEW_F
 cat 93rfs8dhf834hts.crt gd_bundle-g2-g1.crt > platform-ops.crt
 ```
 
-#### OPTIONAL
+##### OPTIONAL
 
 You can validate your certificates using your key file.
 
@@ -130,15 +129,19 @@ You can validate your certificates using your key file.
     
     `openssl rsa -noout -modulus -in server.key| openssl md5
 
-### Run NGINX with SSL
+### Step 4: Run NGINX with SSL
 
-- Generate the basic conf for ssl configuration 
+- Create a isolated directory for runing the nginx to do run the following 
 
 ```bash
 mkdir nginx-configuration/
 
 cd nginx-configuration/
 
+```
+- - Generate the basic `.conf` for ssl configuration
+
+```bash
 cat <<\EOF >> nginx.conf
 user root;
 
