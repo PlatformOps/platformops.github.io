@@ -2,7 +2,7 @@
 layout: post
 title:  "Open JDK docker container commands"
 author: jinna
-categories: [ aws, ebs ]
+categories: [ Devops ]
 image: assets/images/Logo_new_4_b.png
 ---
 

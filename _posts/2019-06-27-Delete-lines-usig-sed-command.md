@@ -2,7 +2,7 @@
 layout: post
 title:  "Linux - sed command"
 author: jinna
-categories: [ Linux, bash ]
+categories: [ Devops ]
 image: assets/images/Logo_new_4_b.png
 ---
 

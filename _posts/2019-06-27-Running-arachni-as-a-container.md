@@ -2,7 +2,7 @@
 layout: post
 title:  "Arachni - Vulnerability Assessment & Penetration Testing Tool"
 author: jinna
-categories: [ VAPT, Arachni ]
+categories: [ Security ]
 image: assets/images/Logo_new_4_b.png
 ---
 

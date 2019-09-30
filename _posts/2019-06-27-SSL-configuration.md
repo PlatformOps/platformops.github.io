@@ -2,7 +2,7 @@
 layout: post
 title:  "SSL - Secure Sockets Layer"
 author: jinna
-categories: [ SSL, Https ]
+categories: [ Security ]
 image: assets/images/Logo_new_4_b.png
 ---
 

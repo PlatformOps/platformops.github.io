@@ -2,7 +2,7 @@
 layout: post
 title:  "Git - Git cheetsheet"
 author: jinna
-categories: [ docker, nodejs ]
+categories: [ Devops ]
 image: assets/images/Logo_new_4_b.png
 ---
 

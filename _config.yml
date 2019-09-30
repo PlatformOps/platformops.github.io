@@ -1,64 +1,81 @@
-# Site
-name: "Platform Ops"
-title: "Platform Ops"
-description: "Platform Ops "
+name: "Platform Operations"
+title: "Platform Operations"
+description: >- # this means to ignore newlines until "baseurl:"
+  Platform Ops, Articles from a platform engineer on Fullstack Development, Application Architecture, DevOps, Cloud Ops, Platform Ops, Docker, Dockerization, Containerisation, CICD Tools, Jenkins, Git, Gitlabs, Distributed Databases configuration, application zero downtime, reverse proxy, NGXIN and it covers each and every area of the application development and operations in the cloud.
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
-google_analytics: 'UA-142811521-1'
+avatar: 'assets/images/jinnabalu.ico'
+email: 'jinna.balu@outlook.com'
+google_analytics: 'UA-143812938-1'
 disqus: 'platform-ops-tech'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+mailchimp-list: '740edc161d6981433d6f63338'
 include: ["_pages"]
 permalink: /:title/
 
-# Authors
 authors:
   jinna:
     name: Jinna Balu
     display_name: Jinna Balu
-    gravatar: 24b94c438636e3d95a32f72999d5081f
-    email: jinna.balu@outllok.com
+    gravatar: b72fed5cc697045301354e959f385aa5
+    email: jinna.balu@outlook.com
     web: https://jinnabalu.github.io
     twitter: https://twitter.com/JinnaBalu
     twitter_username: JinnaBalu
-    description: "Platform Engineer @ Wisestep Inc, Developer and maintainer of Platform Ops"
+    description: "Technology Enthusiast, Works as Platform Engineer @ Wisestep Inc, Developer and maintainer of Platform Ops"
 
+bing_site_verification: "B6F4467FDC4962721287120FD46AC560"
+naver_site_verification: "1f0a2d4ce207c157718824b50412d91a1301f2f7"
+yandex_site_verification: "35fe1ea7a1a1445f"
+
+# ShareThis, replace this with your own id from https://platform.sharethis.com/
+share_id: 5d8ed2f0ddd24e0019459c33
+# OR
+# AddThis, replace this with your own code from https://www.addthis.com/
+# addthis_id: ra-5b151123169714ca
+ 
 # Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+plugins: 
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 6
-paginate_path: /page:num/
-    
-# Other
-markdown: kramdown
+ 
+# Defaults
+defaults:
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+  # all posts
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      
+  # all pages
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+      
+      
+# Syntax
+markdown: kramdown
+highlighter: rouge
+
+# Pagination
+paginate: 20
+
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
 
 # Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
-adsense: "enabled"
-adsense-data-ad-client: "ca-pub-1832826311063237"
-# adsense-data-ad-slot: "1363087678"
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
 
 # Lazy Images ("enabled" or "disabled")
-lazyimages: "enabled"
+lazyimages: "disabled"
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+article-catergories: [Analytics, Application, Messaging, Databases, DevOps, Monitoring, Security, Storage]
+
+navlinks: []
