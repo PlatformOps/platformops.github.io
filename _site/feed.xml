@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2019-09-30T01:57:29-05:00</updated><id>http://0.0.0.0:4000/</id><title type="html">Platform Operations</title><subtitle>Platform Ops, Articles from a platform engineer on Fullstack Development, Application Architecture, DevOps, Cloud Ops, Platform Ops, Docker, Dockerization, Containerisation, CICD Tools, Jenkins, Git, Gitlabs, Distributed Databases configuration, application zero downtime, reverse proxy, NGXIN and it covers each and every area of the application development and operations in the cloud.</subtitle><entry><title type="html">Adding Try in PWD button to README file</title><link href="http://0.0.0.0:4000/Try-in-Play-With-Docker-Labs/" rel="alternate" type="text/html" title="Adding Try in PWD button to README file" /><published>2019-09-10T00:00:00-05:00</published><updated>2019-09-10T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Try-in-Play-With-Docker-Labs</id><content type="html" xml:base="http://0.0.0.0:4000/Try-in-Play-With-Docker-Labs/">&lt;p&gt;The “Try in PWD” actually supports to deploy any stack file that’s available on the web. In the stack parameter you can either add a relative path of a stack in the stacks repo or a URL.&lt;/p&gt;
+
+&lt;h4 id=&quot;create-the-button-with-the-following-script&quot;&gt;Create the button with the following script&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[![&lt;/span&gt;Try &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;PWD]&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png&lt;span class=&quot;o&quot;&gt;)](&lt;/span&gt;http://play-with-docker.com?stack&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://&amp;lt;my_stack_url&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Example to run wordpress as a container with the follwoing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is how the script looks like&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[![&lt;/span&gt;Try &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;PWD]&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png&lt;span class=&quot;o&quot;&gt;)](&lt;/span&gt;http://play-with-docker.com?stack&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://raw.githubusercontent.com/JinnaBalu/wordpress/master/docker-compose-wordpress-mysql.yml&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is how the button look like&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/wordpress/master/docker-compose-wordpress-mysql.yml&quot;&gt;&lt;img src=&quot;https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png&quot; alt=&quot;Try in PWD&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Additionally we wanted to have everything in one place (button + stacks) so users can click on the button and go to the &lt;a href=&quot;https://labs.play-with-docker.com/&quot;&gt;Play with Docker&lt;/a&gt;&lt;/p&gt;</content><author><name>jinna</name></author><summary type="html">The “Try in PWD” actually supports to deploy any stack file that’s available on the web. In the stack parameter you can either add a relative path of a stack in the stacks repo or a URL.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/play-with-docker.png" /></entry><entry><title type="html">What is containerization and How does docker helps for a dev and prod environments</title><link href="http://0.0.0.0:4000/Dockerise-Wordpress/" rel="alternate" type="text/html" title="What is containerization and How does docker helps for a dev and prod environments" /><published>2019-09-10T00:00:00-05:00</published><updated>2019-09-10T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Dockerise-Wordpress</id><content type="html" xml:base="http://0.0.0.0:4000/Dockerise-Wordpress/">&lt;p&gt;In the beginning let me give you my short and concise definition of the problem Docker is built to solve. So we’ll start from there and move on step by step.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-problem-does-docker-solve&quot;&gt;What problem does docker solve?&lt;/h2&gt;
+
+&lt;p&gt;This is the fundamental question of everyone who wants to start out with Docker. Let’s answer the question in the clearest and simplest way possible, with everyday words, not Docker terminology.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What problem does Docker solve?&lt;/em&gt; Docker solves the problem of having identical environments across various stages of development and having isolated environments for your individual applications.&lt;/p&gt;
+
+&lt;p&gt;The problem itself is as old as software development. Environment setup and management is a tedious task in every project.&lt;/p&gt;
+
+&lt;p&gt;In the old days we used custom scripts for that. We used to host various different applications on the same physical machine without any virtualization. It was usually a configuration nightmare to juggle with environment variables, trying to keep applications independently configurable or using two different versions of the same technology (like Java) on the same machine.&lt;/p&gt;
+
+&lt;p&gt;It used to be common practice to run your production applications on dedicated machines, while development or test environments were clattered with a lot of different applications to save hardware cost. In these cases your development and test servers were configured much differently than your production server.&lt;/p&gt;
+
+&lt;p&gt;Our infrastructure teams used to create different environment scripts for different stages, like development, test, staging and production. These environments were not identical, just mostly similar.&lt;/p&gt;
+
+&lt;p&gt;On top of all this, we used to do our local development and unit testing on Windows machines, while all other stages were run on Unix systems.&lt;/p&gt;
+
+&lt;p&gt;Working like this was not impossible, but it was a costly, time consuming effort to manage these environments with a lot of inherent risk that caused a lot of quality issues in all stages. Docker provides a solution to this problem.&lt;/p&gt;</content><author><name>jinna</name></author><summary type="html">In the beginning let me give you my short and concise definition of the problem Docker is built to solve. So we’ll start from there and move on step by step.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/docker.svg" /></entry><entry><title type="html">Deploy Static HTML Website as Container</title><link href="http://0.0.0.0:4000/Dockerise-html-page/" rel="alternate" type="text/html" title="Deploy Static HTML Website as Container" /><published>2019-08-26T00:00:00-05:00</published><updated>2019-08-26T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Dockerise-html-page</id><content type="html" xml:base="http://0.0.0.0:4000/Dockerise-html-page/">&lt;h2 id=&quot;before-you-begin&quot;&gt;Before you Begin&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/ubuntu/&quot;&gt;Docker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;install &lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;docker-compose&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-a-sample-static-app&quot;&gt;Create a sample static app&lt;/h2&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Platform Ops&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jumbotron&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Platform Ops&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt; 
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Anything and Everything as container&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;option-1&quot;&gt;Option #1&lt;/h1&gt;
+
+&lt;h2 id=&quot;deploy-static-app-as-container-with-nginx-image&quot;&gt;Deploy Static app as container with nginx image&lt;/h2&gt;
+
+&lt;p&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;static-app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;nginx:1.17&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;platform-ops&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volume&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;. /usr/share/nginx/html&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;replicas&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RUN the container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;option-2&quot;&gt;Option #2&lt;/h1&gt;
+
+&lt;h2 id=&quot;create-a-dockerfile-to-create-a-custom-image&quot;&gt;Create a Dockerfile to create a custom image&lt;/h2&gt;
+
+&lt;p&gt;Create a Dockerfile with &lt;code class=&quot;highlighter-rouge&quot;&gt;NGINX&lt;/code&gt; as base image, copying the static content of the website.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Dockerfile&quot;&gt;FROM nginx:1.17
+COPY . /usr/share/nginx/html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FROM nginx:1.17&lt;/code&gt; - Base image of the container, with the version &lt;code class=&quot;highlighter-rouge&quot;&gt;1.17&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;COPY . /usr/share/nginx/html&lt;/code&gt; - Copying the content of the current directory &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/share/nginx/html&lt;/code&gt; location of the container.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-a-docker-image&quot;&gt;Create a docker image&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Docker CLI&lt;/code&gt; will use the Dockerfile, to create the docker image. Here is the docker build command to create the image&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; platform-ops-static &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By default it create a image with latest tag.&lt;/p&gt;
+
+&lt;p&gt;OR&lt;/p&gt;
+
+&lt;p&gt;To create the docker image with tag as follows&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; platform-ops-static:v1 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops-static&lt;/code&gt; - image name&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;v1&lt;/code&gt; - tag to maintain the version between the images&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;deploy-static-app-as-container&quot;&gt;Deploy Static app as container&lt;/h2&gt;
+
+&lt;p&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yaml&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;static-app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;platform-ops-static&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;platform-ops&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;replicas&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;RUN the container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jinna</name></author><summary type="html">Before you Begin Install Docker install docker-compose</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/html-5.svg" /></entry><entry><title type="html">Dockerfile</title><link href="http://0.0.0.0:4000/Dockerfile/" rel="alternate" type="text/html" title="Dockerfile" /><published>2019-08-26T00:00:00-05:00</published><updated>2019-08-26T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Dockerfile</id><content type="html" xml:base="http://0.0.0.0:4000/Dockerfile/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Deep</title><link href="http://0.0.0.0:4000/Docker-Image-Layers/" rel="alternate" type="text/html" title="Deep" /><published>2019-08-26T00:00:00-05:00</published><updated>2019-08-26T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Docker-Image-Layers</id><content type="html" xml:base="http://0.0.0.0:4000/Docker-Image-Layers/"></content><author><name>jinna</name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/html-5.svg" /></entry><entry><title type="html">Deploy Single Node Couchbase on Docker Compose</title><link href="http://0.0.0.0:4000/Single-Node-Couchbase-Container/" rel="alternate" type="text/html" title="Deploy Single Node Couchbase on Docker Compose" /><published>2019-08-22T00:00:00-05:00</published><updated>2019-08-22T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Single-Node-Couchbase-Container</id><content type="html" xml:base="http://0.0.0.0:4000/Single-Node-Couchbase-Container/"></content><author><name>jinna</name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/couchbase_main.png" /></entry><entry><title type="html">Couchbase Introduction</title><link href="http://0.0.0.0:4000/Couchbase-Intro/" rel="alternate" type="text/html" title="Couchbase Introduction" /><published>2019-08-22T00:00:00-05:00</published><updated>2019-08-22T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Couchbase-Intro</id><content type="html" xml:base="http://0.0.0.0:4000/Couchbase-Intro/">&lt;h3 id=&quot;what-is-couchbase-server&quot;&gt;What is Couchbase Server?&lt;/h3&gt;
+
+&lt;p&gt;I won’t spend the time to explain the intro material here but wanted to correctly identify brief explanation about the basics and we will work on running the couchbase as a container.&lt;/p&gt;
+
+&lt;p&gt;Couchbase is an open-source distributed multi-node-model NoSQL document-oriented database Multinode cluster. Features that are provided by the Couchbase at any scale are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Elastic Scalability&lt;/li&gt;
+  &lt;li&gt;Consistent High Performance&lt;/li&gt;
+  &lt;li&gt;Always-On Availability&lt;/li&gt;
+  &lt;li&gt;Multi-Data Center Deployment&lt;/li&gt;
+  &lt;li&gt;Simple and Powerful Administration&lt;/li&gt;
+  &lt;li&gt;Enterprise-grade Security&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Couchbase Server is designed to provide easy-to-scale key-value or JSON document access with low latency and high sustained throughput&lt;/p&gt;
+
+&lt;p&gt;In Multi node cluster every Couchbase node consists of a data service, index service, query service, and cluster manager component.&lt;/p&gt;
+
+&lt;p&gt;Couchbase is normally a CP type system meaning it provides &lt;a href=&quot;https://en.wikipedia.org/wiki/Consistency_(database_systems)&quot;&gt;Consistency&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Network_partitioning&quot;&gt;partition tolerance&lt;/a&gt;, or it can be set up as an AP system with multiple clusters,  of Eric Brewer’s &lt;a href=&quot;https://en.wikipedia.org/wiki/CAP_theorem&quot;&gt;CAP theorem&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the question, how do we run Couchbase as a container, Following are the Articles related to the containerisation of couchbase.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/Single-Node-Couchbase-Container/&quot;&gt;Run Single Node Couchbase Container&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>jinna</name></author><summary type="html">What is Couchbase Server?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/couchbase_main.png" /></entry><entry><title type="html">Steps to install a Go Daddy SSL Certificate with NGINX</title><link href="http://0.0.0.0:4000/Steps-to-install-a-Go-Daddy-SSL-Certificate-with-NGINX/" rel="alternate" type="text/html" title="Steps to install a Go Daddy SSL Certificate with NGINX" /><published>2019-07-09T00:00:00-05:00</published><updated>2019-07-09T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Steps-to-install-a-Go-Daddy-SSL-Certificate-with-NGINX</id><content type="html" xml:base="http://0.0.0.0:4000/Steps-to-install-a-Go-Daddy-SSL-Certificate-with-NGINX/">&lt;h3 id=&quot;step1-generate-a-csr-and-private-key&quot;&gt;Step1: Generate a CSR and Private Key&lt;/h3&gt;
+
+&lt;p&gt;Before purchasing the certificate we have to generate the CSR(Certificate Signing Request) and key files. You can generate &lt;code class=&quot;highlighter-rouge&quot;&gt;CSR&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.key&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;openssl&lt;/code&gt;. Here is the example commad with sample domain.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:2048 &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;KEY_FILE_NAME].key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;CSR_FILE_NAME].csr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;KEY_FILE_NAME&lt;/code&gt;, this is a private key file used in nginx configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CSR_FILE_NAME&lt;/code&gt;, CSR file used for generating the crt file from Godaddy.&lt;/p&gt;
+
+&lt;h4 id=&quot;following-is-the-example-of-the-platform-opskey-and-platform-opscsr&quot;&gt;Following is the example of the &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.key&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.csr&lt;/code&gt;&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:2048 &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; platform-ops.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; platform-ops.csr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.key&lt;/code&gt; - KEY_FILE_NAME&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.csr&lt;/code&gt; - CSR_FILE_NAME&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Here is the terminal sample output&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;balu@master-node:~/work/Courses/platformops.github.io&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:2048 &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; platform-ops.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; platform-ops.csr
+Generating a 2048 bit RSA private key
+.........+++
+.............................................................................................................................................+++
+writing new private key to &lt;span class=&quot;s1&quot;&gt;'platform-ops.key'&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt;
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;, the field will be left blank.
+&lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt;
+Country Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2 letter code&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;AU]:IN
+State or Province Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;full name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Some-State]:Telangana
+Locality Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, city&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:Medak
+Organization Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, company&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Internet Widgits Pty Ltd]:Platform Ops
+Organizational Unit Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;eg, section&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:Medak
+Common Name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g. server FQDN or YOUR name&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:Jinna Balu
+Email Address &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:jinna.balu@platform-ops.com
+
+Please enter the following &lt;span class=&quot;s1&quot;&gt;'extra'&lt;/span&gt; attributes
+to be sent with your certificate request
+A challenge password &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
+An optional company name &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:Platform Ops 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This will generate two files, &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.key&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.csr&lt;/code&gt;. you can copy the &lt;code class=&quot;highlighter-rouge&quot;&gt;.csr&lt;/code&gt; file content to request for the SSL Certificate. To view the content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.csr&lt;/code&gt; use the following command.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now you can purchase your certificate. You will need to copy and paste your &lt;code class=&quot;highlighter-rouge&quot;&gt;platform-ops.csr&lt;/code&gt; certificate to send your request for a SSL Certificate. Use this command to print your file:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;platform-ops.csr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;steps-2-get-an-ssl-certificate&quot;&gt;Steps 2: Get an SSL certificate&lt;/h3&gt;
+
+&lt;p&gt;Buy SSL and show visitors you’re trustworthy and authentic. Godaddy provides the ssl certificate with the following types.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Protect one website&lt;/li&gt;
+  &lt;li&gt;Protect multiple websites&lt;/li&gt;
+  &lt;li&gt;Protect all sub domains&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Go for something that best suits your needs purchase the certificate. This tutorial is based on the first one but I’m sure you can use it for all of them. Clear steps defined for purchasing and activating the ssl in &lt;a href=&quot;https://in.godaddy.com/help/ssl-certificates-1000006&quot;&gt;SSL Certificates Help&lt;/a&gt; godaddy official docs.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-3-request-an-ssl-certificate-and-download&quot;&gt;Step 3: Request an SSL certificate and download&lt;/h3&gt;
+
+&lt;p&gt;GoDaddy now verifies that you control the domain. You will receive an email as soon as your SSL certificate will be issued with a link to download it. Open that link.&lt;/p&gt;
+
+&lt;p&gt;Select Apache from the Server type dropdown menu and download the ZIP archive. It should contain two .crt files:&lt;/p&gt;
+
+&lt;p&gt;Your SSL Certificate with a random name (Ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;93rfs8dhf834hts.crt&lt;/code&gt;)
+The GoDaddy intermediate certificate bundle (Ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;gd_bundle-g2-g1.crt&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;The certificate is now ready to be installed on your &lt;code class=&quot;highlighter-rouge&quot;&gt;NGINX&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;generate-single-chained-certificate&quot;&gt;Generate single chained certificate&lt;/h4&gt;
+
+&lt;p&gt;With Nginx, if your Certificate Authority (CA) included an intermediate certificate, you must create a single chained certificate file that contains your certificate and the CA’s intermediate certificates.&lt;/p&gt;
+
+&lt;h5 id=&quot;certificates&quot;&gt;Certificates&lt;/h5&gt;
+
+&lt;p&gt;Ones you have generated, downloaded and extracted the certificate zip, you will find 2 files in it:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gd_bundle-g2-g1.crt&lt;/code&gt; Intermediate Certificate&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RANDOM_NUM.crt&lt;/code&gt; Your SSL Certificate&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;creating-single-chained-certificate&quot;&gt;Creating single chained certificate&lt;/h5&gt;
+
+&lt;p&gt;Create a single “chained” certificate file that contains your certificate and the CA’s intermediate certificates.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &amp;lt;RANDAM_NAME_SSL CERTIFICAT&amp;gt;.crt &amp;lt;GD_BUNDLE_OR_SSL_CERTIFICATE&amp;gt;.crt &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &amp;lt;NEW_FILE_NAME&amp;gt;.crt
+
+&lt;span class=&quot;c&quot;&gt;# Example&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;93rfs8dhf834hts.crt gd_bundle-g2-g1.crt &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; platform-ops.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;optional&quot;&gt;OPTIONAL&lt;/h5&gt;
+
+&lt;p&gt;You can validate your certificates using your key file.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check a certificate and return information about it(Signing authority, expiration date, etc.)&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl x509 -in server.crt -text -noout&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check the SSL key and verify the consistency.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl rsa -in server.key -check&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Verify the CSR and print CSR data filled in when generating the CSR.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl req -text -noout -verify -in server.csr&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The following two commands will print out md5 sums of the certificate and key. These sums can be compared to verify that the certificate and key match.&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl x509 -noout -modulus -in server.crt| openssl md5&lt;/code&gt;&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;`openssl rsa -noout -modulus -in server.key&lt;/td&gt;
+          &lt;td&gt;openssl md5&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-4-run-nginx-with-ssl&quot;&gt;Step 4: Run NGINX with SSL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a isolated directory for runing the nginx to do run the following&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;nginx-configuration/
+
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;nginx-configuration/
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Generate the basic &lt;code class=&quot;highlighter-rouge&quot;&gt;.conf&lt;/code&gt; for ssl configuration&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt; &amp;gt;&amp;gt; nginx.conf
+user root;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include            mime.types;
+    .........
+    ..........
+    server {
+      listen 80;
+      server_name platform-ops.tech;
+      return 301 https://&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$host$request_uri&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;;
+
+      access_log off;
+      error_log  /var/log/nginx/error.log error;
+    }
+
+    server {
+        listen 443 ssl;
+        server_name platform-ops.tech;
+        root /usr/share/nginx/html;
+        ssl_certificate    /etc/nginx/ssl/platform-ops.crt;
+        ssl_certificate_key    /etc/nginx/ssl/ platform-ops.key;
+        ......
+        ......
+        location / {
+            .....
+            ...
+        }
+    }
+}
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Generate the docker-compose files for nginx&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;nginx-configuration/
+
+
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt; &amp;gt;&amp;gt; docker-compose.yml
+version: '3'
+services:
+  proxy:
+    image: nginx:latest
+    container_name: nginx_proxy
+    volumes:
+      - &quot;./nginx.conf:/etc/nginx/nginx.conf:ro&quot;
+      - &quot;./certs:/etc/nginx/ssl:ro&quot;
+      - &quot;./html:/usr/share/nginx/html:ro&quot;
+      - &quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;/logs/nginx:/var/log/nginx&quot;
+    restart: always
+    ports:
+      - &quot;80:80&quot;
+      - &quot;443:443&quot;
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run nginx docker container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jinna</name></author><summary type="html">Step1: Generate a CSR and Private Key</summary></entry><entry><title type="html">Docker Issues</title><link href="http://0.0.0.0:4000/Docker-Issues/" rel="alternate" type="text/html" title="Docker Issues" /><published>2019-07-09T00:00:00-05:00</published><updated>2019-07-09T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Docker-Issues</id><content type="html" xml:base="http://0.0.0.0:4000/Docker-Issues/">&lt;h1 id=&quot;docker-issues&quot;&gt;Docker issues:&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Solution : &lt;code class=&quot;highlighter-rouge&quot;&gt;docker network prune&lt;/code&gt;&lt;/p&gt;</content><author><name>jinna</name></author><summary type="html">Docker issues:</summary></entry><entry><title type="html">Elasticsearch - Issues</title><link href="http://0.0.0.0:4000/Elasticsearch-Issues/" rel="alternate" type="text/html" title="Elasticsearch - Issues" /><published>2019-06-30T00:00:00-05:00</published><updated>2019-06-30T00:00:00-05:00</updated><id>http://0.0.0.0:4000/Elasticsearch-Issues</id><content type="html" xml:base="http://0.0.0.0:4000/Elasticsearch-Issues/"></content><author><name>jinna</name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/images/tech/elasticsearch.svg" /></entry></feed>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Jenkins - Schedule"
 author: jinna
-categories: [ CICD, Jenkins ]
+categories: [ Devops ]
 image: assets/images/tech/jenkins.svg
 ---
 

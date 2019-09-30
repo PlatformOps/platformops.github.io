@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Clean tumbstones in cassandra"
+description: "Cleaning the tumb_stones in cassandra with GC_GRACE_SECONDS for the table"
 author: jinna
-categories: [ cassandra, database, nosql ]
+categories: [ Storage ]
 image: assets/images/tech/cassandra.svg
 ---
 

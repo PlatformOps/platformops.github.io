@@ -2,7 +2,7 @@
 layout: post
 title:  "AWS EBS Volmes - Create and attach the EBS volume with mounting"
 author: jinna
-categories: [ aws, ebs ]
+categories: [ Devops ]
 image: assets/images/Logo_new_4_b.png
 ---
 

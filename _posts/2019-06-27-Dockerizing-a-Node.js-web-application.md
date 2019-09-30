@@ -2,7 +2,7 @@
 layout: post
 title:  "Docker - dockerise the nodejs application"
 author: jinna
-categories: [ docker, nodejs ]
+categories: [ Application ]
 tags: [red, yellow]
 image: assets/images/tech/docker_nodejs.jpeg
 description: " Create a nodejs application, Dockerise nodejs application"

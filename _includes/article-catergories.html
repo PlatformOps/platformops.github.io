@@ -1,0 +1,10 @@
+<h3>
+    {% assign sortedTechnologies = site.article-catergories | sort %}
+    {% for category in sortedTechnologies %}
+    <span class="badge badge-pill badge-light">
+        <a class="smoothscroll text-dark" href="{{site.baseurl}}/categories#{{ category | downcase | replace: " ","-" }}">
+            {{ category }}
+        </a>
+    </span>
+    {% endfor %}
+</h3>
