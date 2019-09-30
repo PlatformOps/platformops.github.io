@@ -1,6 +1,8 @@
 ---
 title: "Privacy Policy"
 permalink: "/privacy-policy.html"
+description: "Platform Operations will be working on creating tutorials and practical implementation of the dockerisation of any application. Tutorials created here are purely example based, which will help you dockerize your application and run it as a container"
+image: assets/images/logo.png
 ---
 
 "{{site.name}}" takes your privacy seriously. To better protect your privacy we provide this privacy policy notice explaining the way your personal information is collected and used.
