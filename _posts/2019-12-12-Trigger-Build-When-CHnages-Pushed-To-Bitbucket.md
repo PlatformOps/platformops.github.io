@@ -22,7 +22,7 @@ To answer the above, Jenkins provides a plugin `Bitbucket plugin is designed to 
 
 ### 2. Add Webhook to your Bitbucket repository (Repository Settings -> Webhooks -> Add Webhook)
 
-![Bibucket Webhook](assets/images/tech/bitbucket_webhook.png)
+![Bibucket Webhook](https://platform-ops.tech/assets/images/tech/bitbucket_webhook.png)
 
 Title: Test Webhook
 
