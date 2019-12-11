@@ -1,5 +1,5 @@
 ---
-title:  "Dpcker API Configuration"
+title:  "Docker API Configuration"
 metadate: "hide"
 categories: [ DockerAPI ]
 tags: [ Jenkins ]
