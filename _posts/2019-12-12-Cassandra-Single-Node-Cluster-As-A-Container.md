@@ -1,5 +1,5 @@
 ---
-title:  "Cassandra as a single node cluster container"
+title:  "Cassandra single node cluster as a container"
 metadate: "hide"
 categories: [ Cassandra, NoSQL ]
 tags: [ Cassandra ]
@@ -28,7 +28,7 @@ To answer the above, Docker provides a `Docker Official Images` for Apache Cassa
 ```bash
 version: '3'
 services:
-    wscassandra-one:
+    cassandra-one:
         image: cassandra:3.9
         # volumes:
         #     - cassandra-volume:/var/lib/cassandra/
