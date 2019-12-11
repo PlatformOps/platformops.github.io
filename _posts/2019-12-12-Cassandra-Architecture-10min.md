@@ -47,7 +47,7 @@ High level life cycle of the data from the time it is written from a cassandra c
 
 **Step 5** Once data makes it way to SSTables the corresponding reference of the record in commit log and Memtable is flushed out.
 
-# nodetool
+# Nodetool
 
 - Used for maintenance, to ensure all pending transactions are flushed out to the SSTables before a node shutdown
 
@@ -55,6 +55,7 @@ High level life cycle of the data from the time it is written from a cassandra c
 
 # Testing Cassandra Durability
 
+- Create a [single node cluster](https://platform-ops.tech/Cassandra-Single-Node-Cluster-As-A-Container/)
 - Let us put cassandra's durability to test with a real world ecommerce use case.
 - Let us assume we have a keyspace that manages user cart or orders and given a scenario of node failure let us put cassandra's durability to test.
 
