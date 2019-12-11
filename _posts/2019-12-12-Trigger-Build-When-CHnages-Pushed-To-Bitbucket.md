@@ -1,7 +1,7 @@
 ---
 title:  "Trigger a Build in Jenkins using Bitbucket Hooks"
 metadate: "hide"
-categories: [ DockerAPI ]
+categories: [ Jenkins, Bitbucket ]
 tags: [ Jenkins ]
 image: "assets/images/tech/jenkins_bibucket.jpg"
 ---
@@ -12,13 +12,13 @@ image: "assets/images/tech/jenkins_bibucket.jpg"
 - How to Automate Build process when changes pushed to Bitbucket?
 
 
-To answer the above, Jenkins provides a plugin `Bitbucket plugin is designed to offer integration between Bitbucket and Jenkins`
+To answer the above, Jenkins provides a plugin, `Bitbucket plugin is designed to offer integration between Bitbucket and Jenkins`
 
 ### 1. Install “Bitbucket Plugin” at your Jenkins
 
 - Jenkins Home ->  Manage Jenkins -> Plugin Manager -> Select Available Tab -> In searchbox enter  Bitbucket Plugin and enter
 
-- Click on install and restart
+- Select the `Bitbucket Plugin` then Click on install and restart
 
 ### 2. Add Webhook to your Bitbucket repository (Repository Settings -> Webhooks -> Add Webhook)
 
@@ -35,7 +35,7 @@ SSL / TLS: [x] Skip certificate verification as we are using `http` in the URL
 Finally Click on Save
 
 
-### 2. Configure Jenkins Job
+### 3. Configure Jenkins Job
 
 Under Section build trigger enable Build when a change is pushed to BitBucket
 
